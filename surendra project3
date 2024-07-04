@@ -1,0 +1,217 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+ srand((unsigned int) time(NULL));
+ 
+ int number = (rand() % 100) + 1;  // 0-99 + 1 -> 1-100
+ 
+ int guess = 0;
+ 
+ do
+ {
+     cout<<"Enter Guess (1-100): ";
+     cin>>guess;
+     
+     if (guess > number)
+       cout<< "Guess lower!"<< endl;
+      else if (guess < number)
+       cout << "Guess higher!" << endl;
+      else 
+        cout << "You won!"<< endl;
+       
+   
+ } while (guess != number);
+ 
+  return 0;
+}
+
+
+output:Enter Guess (1-100): 50
+Guess higher!
+Enter Guess (1-100): 90
+Guess lower!
+Enter Guess (1-100): 45
+Guess higher!
+Enter Guess (1-100): 50
+Guess higher!
+Enter Guess (1-100): 60
+You won!
+
+
+=== Code Execution Successful ===
+
+________________________________________________________________________________________________________________________________________________________________
+task2 SIMPLE CALCULATOR
+
+
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    char op;
+    float numl,num2;
+    
+    cout<<"Enter operator either + or - or * or / :";
+    cin>>op;
+    cout<<"Enter Two operands :";
+    cin>>numl>>num2;
+    
+    switch(op)
+    {
+      case'+':
+        break;
+        
+      case'-':
+        cout<<numl-num2;
+        break;
+        
+      case'/':
+        cout<<numl/num2;
+        break;
+        
+        default:
+//if the operator is other than +,-,* or /, error msg.is shown
+         cout<<"Enter! operator is not correct ";
+         break;
+    }
+     return 0;
+}   
+
+
+output:
+1)Enter operator either + or - or * or / :-
+Enter Two operands :15 6
+9
+
+=== Code Execution Successful ===
+
+2)Enter operator either + or - or * or / :+
+Enter Two operands :10 30
+
+
+=== Code Execution Successful ===
+
+3)Enter operator either + or - or * or / :/
+Enter Two operands :14 2
+7
+
+=== Code Execution Successful ===
+
+______________________________________________________________________________________________________________________________________________________________________
+TasK 3: To-Do list
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+struct Task {
+    string description
+    bool completed;
+    
+};
+
+Class ToDoList {
+private:
+     vector<Task> tasks;
+     
+public:
+
+     void addTask(const string& description) {
+         Task newTask = {description, false};
+         tasks.push_back (New Task);
+         cout << "Task added successfully." << endl;
+     }
+     
+     void viewTasks()  {
+         if (tasks.empty())  {
+             cout << "No tasks in the list." << endl;
+        } else {
+            cout << "To-Do List:" << endl;
+            for(size_t i = 0; i < tasks.size(); ++i) {
+                cout << i + l << ". " << (tasks[i].completed ? "[x]" : "[]") << " " << " " << tasks[i].description << endl;
+            }
+        }
+     }
+     
+     void markTaskCompleted(int TaskIndex) {
+         if (taskIndex >= l && taskIndex<= static_cast<int>(tasks.size())) {
+             tasks[taskIndex - l].completed."<< endl;
+         } else {
+             cout<< "Invalid task index. Please enter a valid index." <<endl;
+         }
+     }
+     
+     void removeTask(int taskIndex) {
+         if (taskIndex >= l&& taskIndex <=static_cast<int>{tasks.size())) {
+             tasks.erase(tasks.begin() + taskIndex - l);
+             cout << "Task removed successfully." << endl;
+         } else {
+              cout << "Invalid task index. please enter a valid index." << end;
+         }
+    } 
+};
+
+void DisplayMenu() {
+    cout << "\nTo-Do list Manager" << Endl;
+    cout << "1. Add Task" << end1;
+    cout << "2. View Tasks" << endl;
+    cout << "3. Mark Task as Completed" << end;
+    cout << "4. Remove Task" << endl;
+    cout << "5. Quit" << endl;
+    cout << "Enter your choice:";
+
+}
+
+int main() {
+    ToDoList todolist;
+    
+    int choice;
+    do {
+        DisplayMenu();
+        cin >> choice;
+        
+        switch (choice) {
+            case l: {
+                cout << "Enter task description: ";
+                cin.ignore();
+                string description;
+                getline(cin, description) ;
+                break;
+            }
+            case 2:
+                toDolist.viewTasks();
+                break;
+            case 3: [
+                int taskIndex;
+                cout << "Enter the index of the task to make as completed: ";
+                cin >> taskIndex;
+                toDolist.marktaskCompleted(taskIndex);
+                break;
+            case 4: {
+                 int taskIndex;
+                 toDolist.Removetask(taskIndex);
+            }
+            case 5:
+                 cout << "Exiting the program."<< endl;
+            default:
+                 cout << "Invalid choice. Please try again." << endl;
+                 break;
+            }
+        }  
+        while (choice !=5);
+        return 0;
+}
+        
+    
+
+         
+        
+
+
